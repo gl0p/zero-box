@@ -2,8 +2,6 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <UTFT.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
 
 UTFT lcd(ILI9341_16,38,39,40,41);   // CHANGE TO YOUR DISPLAY DRIVER, FOUND IN UTFT.h //
 

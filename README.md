@@ -1,6 +1,33 @@
 # zero-box
 Dual H-Bridge using TC4420's and MOSFETS with stereo control using RasPi Pico's as drivers and an Arduino Mega for the interface. 
 
+I am hoping this tool to be useful, cheap and easy to use for anyone looking for an adjustable high power frequency stereo output device. Some useages include driving speakers, pizeo electric devices or coils of wire. 
+
+
+Version 0.0.1
+
+Materials:  
+
+            4x PNP IRF9530    MOSFET
+            4x NPN IRF530     MOSFET
+            4x TC4420         DRIVER
+            8x 1N4004         DIODE
+            1x L7805          5 VOLT VOLTAGE REGULATOR
+            4x 0.1uF          CAPACITOR
+            20x 10K ohm       RESISTOR
+            2x 270R           RESISTOR
+            2x 560R           RESISTOR
+            28AWG FLAT CABLE  WIRE
+            SOLID 22 AWG      WIRE
+            STRANDED 24AWG    WIRE
+            SPEAKERS          TESTING
+            2x Raspberry Pi Pico
+            1x Arduino Mega 2650
+            1x TFT_320QVT_9341
+            
+            
+
+
 I have included the UTFT libary as a zip folder, In Arduino go to 
 
 SKETCH > INCLUDE LIBRARY > ADD ZIP LIBRARY... 

@@ -16,4 +16,5 @@ You can use your own display with an alternate libary aswell, as for now there i
 Currently there is no touch support implemented.
 
 MORE TO COME:
+
 I will include a  wiring diagram for everything including the H-Bridge circuit, wiring of the 3.2 inch 16 bit TFT display and the two RasPi Picos. 

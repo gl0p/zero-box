@@ -24,7 +24,6 @@ char hexaKeys[ROWS][COLS] = {
 };
 byte rowPins[ROWS] = {12,11,10,9}; //connect to the row pinouts of the keypad
 byte colPins[COLS] = {6,7,8}; //connect to the column pinouts of the keypad
-int board = 0;
 
 String val = ("");
 String val1 = ("0.00");

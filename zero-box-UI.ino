@@ -5,7 +5,7 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-UTFT lcd(ILI9341_16,38,39,40,41);   // CHANGE TO YOUR DISPLAY //
+UTFT lcd(ILI9341_16,38,39,40,41);   // CHANGE TO YOUR DISPLAY DRIVER, FOUND IN UTFT.h //
 
 extern uint8_t SmallFont[];
 extern uint8_t BigFont[];

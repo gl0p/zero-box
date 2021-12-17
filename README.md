@@ -15,12 +15,15 @@ Materials:
             1x L7805          5 VOLT VOLTAGE REGULATOR
             4x 0.1uF          CAPACITOR
             20x 10K ohm       RESISTOR
-            2x 270R           RESISTOR
-            2x 560R           RESISTOR
+            4x 3.3K           RESISTOR
+            2x 2.2K           RESISTOR
+            2x 2N3904         TRANSISTOR
             28AWG FLAT CABLE  WIRE
             SOLID 22 AWG      WIRE
             STRANDED 24AWG    WIRE
             SPEAKERS          TESTING
+            13x PUSH BUTTONS
+            1x PROTO BOARD
             2x Raspberry Pi Pico
             1x Arduino Mega 2650
             1x TFT_320QVT_9341

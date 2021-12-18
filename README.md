@@ -15,8 +15,8 @@ Materials:
             1x L7805          5 VOLT VOLTAGE REGULATOR
             4x 0.1uF          CAPACITOR
             20x 10K ohm       RESISTOR
-            4x 3.3K           RESISTOR
-            2x 2.2K           RESISTOR
+            3x 3.3K           RESISTOR
+            3x 2.2K           RESISTOR
             2x 2N3904         TRANSISTOR
             28AWG FLAT CABLE  WIRE
             SOLID 22 AWG      WIRE
@@ -48,3 +48,7 @@ Currently there is no touch support implemented.
 MORE TO COME:
 
 I will include a  wiring diagram for everything including the H-Bridge circuit, wiring of the 3.2 inch 16 bit TFT display and the two RasPi Picos. 
+
+USEAGE:
+
+First menu asks to select constant, either sound or light. After it brings you to the main user interface displaying time of frequency cycle, frequency, wavelength and phase of each output. THE DEFAULT VALUES ARE SET TO 1.0. To enter a new frequency just start typing in on the keypad the desired frequency. Then it will ask which board/ output you would like to send the data to. After it will update the user interface to display the new values. To use the phase shift, press the phase shift button and it will ask for a value between 0 and 360, values over 360 can be entered. After it will ask which board/ output you would like to send the ohase shift to. Then it will update the userinterface with the new values.  

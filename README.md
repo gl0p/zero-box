@@ -55,10 +55,10 @@ You can use your own display with an alternate libary aswell, as for now there i
 
 Currently there is no touch support implemented.
 
-MORE TO COME:
+# MORE TO COME:
 
 I will include a  wiring diagram for everything including the H-Bridge circuit, wiring of the 3.2 inch 16 bit TFT display and the two RasPi Picos. 
 
-USEAGE:
+# USEAGE:
 
 First menu asks to select constant, either sound or light. After it brings you to the main user interface displaying time of frequency cycle, frequency, wavelength and phase of each output. THE DEFAULT VALUES ARE SET TO 1.0. To enter a new frequency just start typing in on the keypad the desired frequency. Then it will ask which board/ output you would like to send the data to. After it will update the user interface to display the new values. To use the phase shift, press the phase shift button and it will ask for a value between 0 and 360, values over 360 can be entered. After it will ask which board/ output you would like to send the phase shift to. Then it will update the userinterface with the new values.  

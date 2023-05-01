@@ -4,7 +4,7 @@ Dual H-Bridge using TC4420's and MOSFETS with stereo control using RasPi Pico's 
 I am hoping this tool to be useful, cheap and easy to use for anyone looking for an adjustable high power frequency stereo output device. Some useages include driving speakers, pizeo electric devices or coils of wire. 
 
 
-Version 0.0.1
+Version 1.0.0
 
 Materials:  
 
@@ -27,6 +27,16 @@ Materials:
             2x Raspberry Pi Pico
             1x Arduino Mega 2650
             1x TFT_320QVT_9341
+            
+            Added in version 1.0.0:
+            
+            2x 1M ohm   RESISTOR
+            2x 102 pF   CAPACITOR
+            2x BOOST/BUCK CONVERTER
+            2x 15SQ045  DIODE
+            2x 100V 10A Digital Voltmeter Ammeter
+            
+            
             
             
 
@@ -51,4 +61,4 @@ I will include a  wiring diagram for everything including the H-Bridge circuit, 
 
 USEAGE:
 
-First menu asks to select constant, either sound or light. After it brings you to the main user interface displaying time of frequency cycle, frequency, wavelength and phase of each output. THE DEFAULT VALUES ARE SET TO 1.0. To enter a new frequency just start typing in on the keypad the desired frequency. Then it will ask which board/ output you would like to send the data to. After it will update the user interface to display the new values. To use the phase shift, press the phase shift button and it will ask for a value between 0 and 360, values over 360 can be entered. After it will ask which board/ output you would like to send the ohase shift to. Then it will update the userinterface with the new values.  
+First menu asks to select constant, either sound or light. After it brings you to the main user interface displaying time of frequency cycle, frequency, wavelength and phase of each output. THE DEFAULT VALUES ARE SET TO 1.0. To enter a new frequency just start typing in on the keypad the desired frequency. Then it will ask which board/ output you would like to send the data to. After it will update the user interface to display the new values. To use the phase shift, press the phase shift button and it will ask for a value between 0 and 360, values over 360 can be entered. After it will ask which board/ output you would like to send the phase shift to. Then it will update the userinterface with the new values.  

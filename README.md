@@ -4,7 +4,7 @@ Dual H-Bridge using TC4420's and MOSFETS with stereo control using RasPi Pico's 
 I am hoping this tool to be useful, cheap and easy to use for anyone looking for an adjustable high power frequency stereo output device. Some useages include driving speakers, pizeo electric devices or coils of wire. 
 
 
-Version 1.0.0
+Version 1.0.1
 
 Materials:  
 

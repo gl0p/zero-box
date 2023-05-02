@@ -45,6 +45,10 @@ float time_delay1 = 1.0;
 float time_delay2 = 1.0;
 double constantd = 0;
 unsigned long constant = 0;
+float phase_rad = 0.0;
+float peroid = 0.0;
+float time_per_rad = 0.0;
+String duty = ("");
 
 char status;
 double T,P,K;
@@ -52,13 +56,10 @@ double T,P,K;
 Keypad customKeypad = Keypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS); 
 
 void setup(){
-  pinMode(5, INPUT_PULLUP); //Initiate sync
+  pinMode(5, INPUT_PULLUP); //Set phase shift
+  pinMode(3, INPUT_PULLUP); //Set duty cycle 
   pinMode(4, OUTPUT);       //Sync output
   pinMode(2, OUTPUT);       //Sync output
-  pinMode(44, INPUT);
-  pinMode(45, INPUT);
-  pinMode(A0, INPUT);
-  pinMode(A1, INPUT);
   
   Serial.begin(9600);
   Serial3.begin(9600);
@@ -201,10 +202,11 @@ void phase_shift(){
           char key = customKeypad.getKey();
           
           if (key == '1'){
-            
             phase1 = phase.toFloat();
-            ph1 = phase1/(360*f1);
-            time_delay1 = ph1*1000;
+            phase_rad = phase.toFloat()*(3.14159/180);
+            peroid = 1/f1;
+            time_per_rad = peroid/(2*3.14159);
+            time_delay1 = (time_per_rad*phase_rad)*1000000;
             if (phase1 == 0){
               sync_all();
              }
@@ -217,8 +219,10 @@ void phase_shift(){
           
           if (key == '2'){
             phase2 = phase.toFloat();
-            ph2 = phase2/(360*f1);
-            time_delay2 = ph2*1000;
+            phase_rad = phase2*(3.14159/180);
+            peroid = 1/f2;
+            time_per_rad = peroid/(2*3.14159);
+            time_delay2 = (time_per_rad*phase_rad)*1000000;
             if (phase2 == 0){
               sync_all();
              }
@@ -248,6 +252,59 @@ void phase_shift(){
   }
 }
 
+void dutycycle(){
+  if (digitalRead(3) == LOW){
+    lcd.clrScr();
+    while (true){
+      char key = customKeypad.getKey();
+      lcd.setFont(BigFont);
+      lcd.print("Enter Dutycycle", CENTER, 10);
+      if (key != 'E'){
+        duty = duty+String(key);
+        lcd.print(duty, CENTER, x/2);
+        }
+      if (key == 'E'){
+        lcd.clrScr();
+        lcd.print("SELECT BOARD 1 OR 2", CENTER, x/2);
+        while (true){
+          char key = customKeypad.getKey();
+          
+          if (key == '1'){
+            Serial3.println("duty="+duty);
+            delay(250);
+            duty = "";
+            break;          
+           }
+          
+          if (key == '2'){   
+            Serial2.println("duty="+duty);
+            delay(250);
+            duty = "";
+            break;          
+          }
+           
+          if (key == '3'){
+            lcd.clrScr();
+            lcd.print("CANCLED!", CENTER, x/2);
+            duty = "";
+            delay(1000);
+            lcd.clrScr();
+            gui();
+            break;
+           }
+        }
+        lcd.clrScr();
+        gui();
+        break;
+      }
+     }
+    }
+  }
+
+     
+
+
+
 int y_sig = 0;
 
 void loop(){
@@ -273,6 +330,7 @@ void loop(){
 
   
   phase_shift();  
+  dutycycle();
   
   char key = customKeypad.getKey();
   lcd.setFont(SmallFont);
@@ -309,7 +367,7 @@ void loop(){
       if (key == '1'){
         sync_flag = false;
         val1 = val;
-        f1 = val.toFloat();
+        f1 = val1.toFloat();
         t1 = 1/f1;
         w1 = constant/f1;
         lcd.clrScr();
@@ -346,7 +404,7 @@ void loop(){
         flag = false;
         sync_flag = false;
         val2 = val;
-        f2 = val.toFloat();
+        f2 = val2.toFloat();
         t2 = 1/f2;
         w2 = constant/f2;
         lcd.clrScr();
